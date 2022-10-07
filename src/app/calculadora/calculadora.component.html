@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Aplicación Calculadora</h1>
+      <label for="intA">Number 1</label>
+      <input type="number" name="intA" id="intA" class="form-control" [(ngModel)]="intA">
+      <label for="intB">Number 2</label>
+      <input type="number" name="intB" id="intB" class="form-control" [(ngModel)]="intB">
+      <button class="btn btn-primary" (click)="onSum()">Sum</button>
+      <p>Result: {{result}}</p>
+    </div>
+  </div>
+</div>
