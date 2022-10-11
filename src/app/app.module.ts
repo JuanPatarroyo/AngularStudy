@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { PersonaComponent } from './persona/persona.component';
 import { PersonasComponent } from './personas/personas.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
+import { PeopleComponent } from './people/people.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonaComponent,
     PersonasComponent,
-    CalculadoraComponent
+    CalculadoraComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,

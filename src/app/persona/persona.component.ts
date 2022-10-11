@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Peopl } from './../people/people.model';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-persona',
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonaComponent implements OnInit {
 
-  name: string = "Juan";
-  apellido: string = "Patarroyo";
-  edad: number = 24;
+  @Input() person: Peopl;
+  @Input() index: number;
 
-  constructor() { }
+  constructor() {
+    this.person = new Peopl("","");
+    this.index = 0;
+  }
 
   ngOnInit(): void {
   }
