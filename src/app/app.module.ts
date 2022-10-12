@@ -8,6 +8,9 @@ import { PersonaComponent } from './persona/persona.component';
 import { PersonasComponent } from './personas/personas.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { PeopleComponent } from './people/people.component';
+import { FormComponent } from './form/form.component';
+import { ContainerCalculatorComponent } from './container-calculator/container-calculator.component';
+import { ContainerResultComponent } from './container-result/container-result.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { PeopleComponent } from './people/people.component';
     PersonaComponent,
     PersonasComponent,
     CalculadoraComponent,
-    PeopleComponent
+    PeopleComponent,
+    FormComponent,
+    ContainerCalculatorComponent,
+    ContainerResultComponent
   ],
   imports: [
     BrowserModule,

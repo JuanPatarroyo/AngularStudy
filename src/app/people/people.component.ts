@@ -21,8 +21,7 @@ export class PeopleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAddPerson(){
-    let person = new Peopl(this.name, this.surname);
+  onReceivingPerson(person: Peopl){
     this.people.push(person);
   }
 }

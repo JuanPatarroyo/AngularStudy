@@ -1,0 +1,11 @@
+<form>
+  <div class="form-group">
+    <label for="intA">Number 1</label>
+    <input type="number" name="intA" id="intA" class="form-control" [(ngModel)]="intA">
+  </div>
+  <div class="form-group">
+    <label for="intB">Number 2</label>
+    <input type="number" name="intB" id="intB" class="form-control" [(ngModel)]="intB">
+  </div>
+  <button class="btn btn-primary" (click)="onSum()">Sum</button>
+</form>

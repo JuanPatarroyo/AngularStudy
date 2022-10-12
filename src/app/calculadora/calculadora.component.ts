@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculadoraComponent implements OnInit {
 
-  intA: number = 0;
-  intB: number = 0;
   result: number = 0;
 
   constructor() {
@@ -17,8 +15,8 @@ export class CalculadoraComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSum(): void {
-    this.result = this.intA + this.intB;
+  onReceivingResult(resultReceiving: number): void {
+    this.result = resultReceiving;
   }
 
 }
