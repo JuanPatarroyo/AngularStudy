@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Peopl } from '../people/people.model';
 
 @Component({
@@ -9,6 +9,9 @@ import { Peopl } from '../people/people.model';
 export class FormComponent implements OnInit {
 
   @Output() personCreated = new EventEmitter<Peopl>();
+
+  @ViewChild('nameInput') nameInput: ElementRef | undefined;
+  @ViewChild('surnameInput') surnameInput: ElementRef | undefined;
   // name: string;
   // surname: string;
 
@@ -20,8 +23,8 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAddPerson(nameInput: HTMLInputElement, surnameInput: HTMLInputElement){
-    this.personCreated.emit(new Peopl(nameInput.value, surnameInput.value));
+  onAddPerson(){
+    this.personCreated.emit(new Peopl(this.nameInput?.nativeElement.value, this.surnameInput?.nativeElement.value));
   }
 
 }
