@@ -1,3 +1,5 @@
+import { PeopleService } from './../people.service';
+import { LogginService } from './../LogginService.service';
 import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Peopl } from '../people/people.model';
 
@@ -8,14 +10,12 @@ import { Peopl } from '../people/people.model';
 })
 export class FormComponent implements OnInit {
 
-  @Output() personCreated = new EventEmitter<Peopl>();
-
   @ViewChild('nameInput') nameInput: ElementRef | undefined;
   @ViewChild('surnameInput') surnameInput: ElementRef | undefined;
   // name: string;
   // surname: string;
 
-  constructor() {
+  constructor(private logginService: LogginService, private peopleService: PeopleService) {
     // this.name = "";
     // this.surname = "";
    }
@@ -24,7 +24,9 @@ export class FormComponent implements OnInit {
   }
 
   onAddPerson(){
-    this.personCreated.emit(new Peopl(this.nameInput?.nativeElement.value, this.surnameInput?.nativeElement.value));
+    this.logginService.sendLog('Test ');
+    // this.personCreated.emit(new Peopl(this.nameInput?.nativeElement.value, this.surnameInput?.nativeElement.value));
+    this.peopleService.onReceivingPerson(new Peopl(this.nameInput?.nativeElement.value, this.surnameInput?.nativeElement.value))
   }
 
 }

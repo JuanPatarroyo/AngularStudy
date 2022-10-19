@@ -1,3 +1,4 @@
+import { LogginService } from './LogginService.service';
 import { Component } from '@angular/core';
 
 @Component({

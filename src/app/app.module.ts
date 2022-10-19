@@ -1,3 +1,5 @@
+import { PeopleService } from './people.service';
+import { LogginService } from './LogginService.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,7 +30,7 @@ import { ContainerResultComponent } from './container-result/container-result.co
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LogginService, PeopleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
