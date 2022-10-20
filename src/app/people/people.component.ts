@@ -25,7 +25,7 @@ export class PeopleComponent implements OnInit {
   }
 
   onReceivingPerson(person: Peopl){
-    this.logginService.sendLog('person added is: '+person.name);
+    //this.logginService.sendLog('person added is: '+person.name);
     // this.people.push(person);
     this.peopleService.onReceivingPerson(person);
   }

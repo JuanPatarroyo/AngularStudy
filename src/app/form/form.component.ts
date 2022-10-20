@@ -16,6 +16,7 @@ export class FormComponent implements OnInit {
   // surname: string;
 
   constructor(private logginService: LogginService, private peopleService: PeopleService) {
+    this.peopleService.greetings.subscribe((index: number) => alert("The index is: "+index));
     // this.name = "";
     // this.surname = "";
    }
