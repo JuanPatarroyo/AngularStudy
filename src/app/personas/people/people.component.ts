@@ -1,7 +1,7 @@
-import { PeopleService } from './../people.service';
-import { LogginService } from './../LogginService.service';
+import { PeopleService } from '../../people.service';
 import { Peopl } from './people.model';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-people',
@@ -15,7 +15,7 @@ export class PeopleComponent implements OnInit {
   name: string;
   surname: string;
 
-  constructor(private logginService: LogginService, private peopleService: PeopleService) {
+  constructor(private peopleService: PeopleService, private router: Router) {
     this.name = "";
     this.surname = "";
   }
@@ -24,9 +24,11 @@ export class PeopleComponent implements OnInit {
     this.people = this.peopleService.people;
   }
 
-  onReceivingPerson(person: Peopl){
-    //this.logginService.sendLog('person added is: '+person.name);
-    // this.people.push(person);
+  onReceivingPerson(person: Peopl) {
     this.peopleService.onReceivingPerson(person);
+  }
+
+  add() {
+    this.router.navigate(['people/add']);
   }
 }

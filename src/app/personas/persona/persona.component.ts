@@ -1,5 +1,5 @@
-import { PeopleService } from './../people.service';
-import { Peopl } from './../people/people.model';
+import { PeopleService } from '../../people.service';
+import { Peopl } from '../people/people.model';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
