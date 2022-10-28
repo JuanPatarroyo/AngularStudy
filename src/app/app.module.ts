@@ -14,6 +14,8 @@ import { FormComponent } from './personas/form/form.component';
 import { ContainerCalculatorComponent } from './container-calculator/container-calculator.component';
 import { ContainerResultComponent } from './container-result/container-result.component';
 import { ErrorComponent } from './error/error.component';
+import { DataServices } from './data.services';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,10 @@ import { ErrorComponent } from './error/error.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [LogginService, PeopleService],
+  providers: [LogginService, PeopleService, DataServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -21,7 +21,12 @@ export class PeopleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.people = this.peopleService.people;
+    this.peopleService.getPeople().subscribe({
+      next: people => {
+        this.people = people as Peopl[];
+        this.peopleService.setPeople(this.people);
+      },
+    })
   }
 
   onReceivingPerson(person: Peopl) {
