@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
 import { PersonasComponent } from './personas/personas.component';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ const routes: Routes = [
       { path: ':id', component: FormComponent }
     ]
   },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: ErrorComponent }
 ];
 

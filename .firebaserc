@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "personapp-de58c": {
+      "hosting": {
+        "AngularStudy": [
+          "personapp-de58c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "personapp-de58c"
+  }
+}

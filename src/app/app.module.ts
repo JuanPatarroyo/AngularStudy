@@ -1,3 +1,4 @@
+import { LoginService } from './login/login.service';
 import { PeopleService } from './people.service';
 import { LogginService } from './LogginService.service';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,12 @@ import { ContainerResultComponent } from './container-result/container-result.co
 import { ErrorComponent } from './error/error.component';
 import { DataServices } from './data.services';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -27,15 +34,19 @@ import { HttpClientModule } from '@angular/common/http';
     FormComponent,
     ContainerCalculatorComponent,
     ContainerResultComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase())
   ],
-  providers: [LogginService, PeopleService, DataServices],
+  providers: [LogginService, PeopleService, DataServices, LoginService, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

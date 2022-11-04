@@ -1,4 +1,3 @@
-import { LogginService } from './LogginService.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularStudy';
+
+  constructor(){}
+
+  ngOnInit(): void {
+  }
 }
