@@ -7,24 +7,27 @@ export class LoginService {
 
   token: string;
 
-  constructor(public afAuth: AngularFireAuth, private router: Router) {
+  constructor(private router: Router) {
     this.token = "";
   }
 
   login(email: string, password: string) {
-    this.afAuth
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        result.user?.getIdToken().then(
-          token => {
-            this.token = token;
-          }
-        );
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
-    this.router.navigate(['/']);
+    debugger;
+    // this.afAuth
+    //   .signInWithEmailAndPassword(email, password)
+    //   .then((result) => {
+    //     debugger;
+    //     result.user?.getIdToken().then(
+    //       token => {
+    //         debugger;
+    //         this.token = token;
+    //         this.router.navigate(['/']);
+    //       }
+    //     );
+    //   })
+    //   .catch((error) => {
+    //     window.alert(error.message);
+    //   });
   }
 
   getIdToken(){

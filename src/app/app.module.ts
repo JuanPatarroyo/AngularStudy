@@ -46,7 +46,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase())
   ],
-  providers: [LogginService, PeopleService, DataServices, LoginService, AngularFireAuth],
+  providers: [LogginService, PeopleService, DataServices, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
