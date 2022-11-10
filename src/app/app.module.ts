@@ -23,6 +23,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
     ContainerCalculatorComponent,
     ContainerResultComponent,
     ErrorComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

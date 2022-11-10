@@ -1,3 +1,4 @@
+import { LoginService } from './../../login/login.service';
 import { PeopleService } from '../../people.service';
 import { Peopl } from './people.model';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,7 @@ export class PeopleComponent implements OnInit {
   name: string;
   surname: string;
 
-  constructor(private peopleService: PeopleService, private router: Router) {
+  constructor(private peopleService: PeopleService, private router: Router, private loginService: LoginService) {
     this.name = "";
     this.surname = "";
   }
@@ -35,5 +36,13 @@ export class PeopleComponent implements OnInit {
 
   add() {
     this.router.navigate(['people/add']);
+  }
+
+  onLogOut(){
+    this.loginService.logout()
+    .then(() =>{
+      this.router.navigate(['/register']);
+    })
+    .catch(error => console.log(error));
   }
 }

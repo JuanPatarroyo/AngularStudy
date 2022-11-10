@@ -13,4 +13,5 @@
   <app-persona *ngFor="let person of people; let i = index" [person]="person" [index]="i"></app-persona>
 
   <router-outlet></router-outlet>
+  <button class="btn btn-danger" (click)="onLogOut()">Logout</button>
 </div>
