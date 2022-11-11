@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { Router } from "@angular/router";
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut,
-signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
+signInWithPopup, GoogleAuthProvider,} from '@angular/fire/auth';
 
 @Injectable()
 export class LoginService {
@@ -27,6 +27,10 @@ export class LoginService {
 
   logout(){
     return signOut(this.auth);
+  }
+
+  setIdToken(token: string){
+    this.token = token;
   }
 
   getIdToken() {

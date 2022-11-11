@@ -23,7 +23,9 @@ export class LoginComponent implements OnInit {
     const password = form.value.password;
     this.loginService.login(email, password)
       .then(response => {
-        console.log(response);
+        response.user.getIdToken().then((token) => {
+          this.loginService.setIdToken(token);
+        });
         this.router.navigate(['people']);
       })
       .catch(error => console.log(error));
@@ -32,9 +34,15 @@ export class LoginComponent implements OnInit {
   loginWithGoogle() {
     this.loginService.loginWithGoogle()
       .then(response => {
-        console.log(response);
+        response.user.getIdToken().then((token) => {
+          this.loginService.setIdToken(token);
+        });
         this.router.navigate(['people']);
       })
       .catch(error => console.log(error));
+  }
+
+  register() {
+    this.router.navigate(['/register']);
   }
 }

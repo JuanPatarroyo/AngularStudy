@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'people', component: PersonasComponent, children: [
       { path: 'add', component: FormComponent },
       { path: ':id', component: FormComponent }
-    ], ...canActivate(()=> redirectUnauthorizedTo(['register']))
+    ], ...canActivate(()=> redirectUnauthorizedTo(['login']))
   },
   { path: 'register', component: RegisterComponent },
   { path: '**', component: ErrorComponent }

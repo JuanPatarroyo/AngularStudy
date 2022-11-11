@@ -41,7 +41,8 @@ export class PeopleComponent implements OnInit {
   onLogOut(){
     this.loginService.logout()
     .then(() =>{
-      this.router.navigate(['/register']);
+      this.loginService.setIdToken('');
+      this.router.navigate(['/login']);
     })
     .catch(error => console.log(error));
   }
